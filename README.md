@@ -36,3 +36,10 @@ Approaches
      - Cons
        - "Fast" tests later have to wait for "slower" tests at beginning
        - No colored output for suites (Don't know if suite is successful until everything inside is finished)
+
+
+## Alternative Approaches
+
+| Behavior          | ScalaTest   | Specs2      | uTest                       | mUnit             |
+|-------------------|-------------|-------------|-----------------------------|-------------------|
+| Parallel Behavior | Interleaved | Interleaved | Fully-qualified interleaved | Grouped Correctly |
