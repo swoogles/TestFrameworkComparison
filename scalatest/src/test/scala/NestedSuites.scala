@@ -2,6 +2,7 @@ import org.scalatest._
 
 /*
  TODO Erm, ScalaTest suite examples are busted.
+ https://www.scalatest.org/scaladoc/3.2.11/org/scalatest/Suite.html
 
 import org.scalatest._
 
