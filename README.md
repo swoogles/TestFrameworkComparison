@@ -40,6 +40,6 @@ Approaches
 
 ## Alternative Approaches
 
-| Behavior          | ScalaTest   | Specs2      | uTest                       | mUnit             |
-|-------------------|-------------|-------------|-----------------------------|-------------------|
-| Parallel Behavior | Interleaved | Interleaved | Fully-qualified interleaved | Grouped Correctly |
+|                               | ScalaTest   | Specs2      | uTest                       | mUnit             |
+|-------------------------------|-------------|-------------|-----------------------------|-------------------|
+| **Parallel Execution Output** | Interleaved | Interleaved | Fully-qualified interleaved | Grouped Correctly |
