@@ -8,7 +8,7 @@ class SpecA extends Specification {
 
     "slow test" >> {
       Thread.sleep(3000)
-      failure
+      success
     }
   }
 }
