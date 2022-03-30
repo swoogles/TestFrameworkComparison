@@ -1,28 +1,37 @@
 import weaver.SimpleIOSuite
 import cats.effect._
 
+import scala.concurrent.duration.DurationInt
+
 // Suites must be "objects" for them to be picked by the framework
-object MySuite extends SimpleIOSuite {
+object ASuite extends SimpleIOSuite {
 
-  pureTest("non-effectful (pure) test"){
-    expect("hello".size == 6)
-  }
-
-  private val random = IO(java.util.UUID.randomUUID())
-
-  test("test with side-effects") {
+  test("quick test") {
     for {
-      x <- random
-      y <- random
-    } yield expect(x != y)
+      _ <- Temporal[IO].sleep(0.seconds)
+    } yield expect(true)
   }
 
-  loggedTest("test with side-effects and a logger"){ log =>
+  test("slow test") {
     for {
-      x <- random
-      _ <- log.info(s"x : $x")
-      y <- random
-      _ <- log.info(s"y : $y")
-    } yield expect(x != y)
+      _ <- Temporal[IO].sleep(3.seconds)
+    } yield expect(true)
   }
+
+}
+
+object BSuite extends SimpleIOSuite {
+
+  test("quick test") {
+    for {
+      _ <- Temporal[IO].sleep(0.seconds)
+    } yield expect(true)
+  }
+
+  test("slow test") {
+    for {
+      _ <- Temporal[IO].sleep(3.seconds)
+    } yield expect(true)
+  }
+
 }
